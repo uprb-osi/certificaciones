@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Certificaciones UPR Bayamón</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body class="homepage">
+  <div id="page-wrapper">';
+    <header>
+      <div id="header-wrapper">
+        <div id="header">
+          <!-- Logo -->
+          <h1><a href="/">Certificaciones UPR en Bayamón</a></h1>
+
+          <nav id="nav">
+            <ul>
+              <li><a href="/">Inicio</a></li>
+              <li>
+                <a href="/certificaciones">Certificaciones <i class="icon fa-angle-down"></i></a>
+                <ul>
+                  <li>
+                    <a href="/certificaciones/microsoft">Microsoft</a>
+                      <!-- <a href="http://certificaciones.uprb.edu/?p=microsoft">Microsoft <i class="icon fa-angle-down"></i></a>
+                      <ul>
+                          <li><a href="http://certificaciones.uprb.edu/?p=microsoft-mos">MOS - Microsoft Office Specialist <i class="icon fa-angle-down"></i></a>
+                              <ul>
+                                  <li><a href="http://certificaciones.uprb.edu/?p=microsoft-mos-word">Word</a></li>
+                                  <li><a href="http://certificaciones.uprb.edu/?p=microsoft-mos-excel">Excel</a></li>
+                                  <li><a href="http://certificaciones.uprb.edu/?p=microsoft-mos-access">Access</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="#">MTA - Microsoft Technology Associate</a></li>
+                          <li><a href="#">MCE - Microsoft Certified Educator</a></li>
+                      </ul> -->
+                  </li>
+                </ul>
+              </li>
+                <li><a >Herramientas <i class="icon fa-angle-down"></i></a>
+                    <ul>
+                        <li><a href="http://docs.uprb.edu/decep/formulario-matricula.pdf" target="_blank">[PDF] Formulario de Matrícula - DECEP</a></li>
+                        <li><a href="documentos/QRG-Test-Candidate-Registration.pdf" target="_blank">[PDF] Crear la cuenta en Certiport</a></li>
+                        <li><a href="http://www.certiport.com/portal/common/htmllibrary/Videos/Test_Candidate_Registration/test_Candidate_Registration.htm" target="_blank">[Video] Crear la cuenta en Certiport</a></li>
+                        <li><a href="http://www.certiport.com/Portal/Common/DocumentLibrary/QRG%20-%20MOS%202013%20Exam%20Tutorials.pdf" target="_blank">[PDF] Demostración Examen de Word</a></li>
+                        <li><a href="https://www.youtube.com/watch?time_continue=2&v=BayBRhfrAgk" target="_blank">[Video] Demostración Examen de Word</a></li>
+                    </ul>
+                </li>
+                <!-- <li><a >Herramientas <i class="icon fa-angle-down"></i></a>
+                    <ul>
+                        <li><a href="http://docs.uprb.edu/decep/formulario-matricula.pdf" target="_blank">Formulario de Matrícula - DECEP</a></li>
+                    </ul>
+                </li> -->
+                <!-- <li><a href="http://certificaciones.uprb.edu/?p=galeria">Galería</a></li> -->
+            </ul>
+          </nav>
+        </div> <!-- id="header" -->
+      </div>
+    </header>
+
+include_once("header.php");
+
+if (isset($_GET['p']) && !empty($_GET['p'])) {
+    switch ($_GET['p']) {
+        case 'certificaciones':
+            include_once("certificaciones/certificaciones.php");
+            break;
+
+        case 'microsoft':
+            include_once("certificaciones/microsoft/microsoft.php");
+            break;
+
+        case 'microsoft-mos-word':
+            include_once("certificaciones/microsoft/mos/microsoft-mos-word.php");
+            break;
+        case 'microsoft-mos-excel':
+            include_once("certificaciones/microsoft/mos/microsoft-mos-excel.php");
+            break;
+        case 'microsoft-mos-access':
+            include_once("certificaciones/microsoft/mos/microsoft-mos-access.php");
+            break;
+            
+        
+        case 'galeria':
+            include_once("galeria.php");
+            break;
+
+        default:
+            include_once("inicio.php");
+            break;
+    }
+} else {
+    include_once("inicio.php");
+}
+
+include_once("footer.php");
+
+echo'
+    </div> <!-- id="page-wrapper" -->
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel-viewport.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+';
