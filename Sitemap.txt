@@ -1,0 +1,11 @@
+[Inicio]
+
+[Certificaciones]
+    [[Adobe]] //Not yet
+    [[Microsoft]]
+        [[[MOS - Microsoft Office Specialist]]]
+            [[[[MOS: Word]]]]
+            [[[[MOS: Excel]]]]
+            [[[[MOS: Access]]]]
+        [[[MTA: Microsoft Technology Associate]]]
+        [[[MCE: Microsoft Certified Educator]]]
