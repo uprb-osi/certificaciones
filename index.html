@@ -4,26 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Certificaciones UPR Bayamón</title>
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 
 <body class="homepage">
-  <div id="page-wrapper">';
+  <div id="page-wrapper">
+    <!-- Header -->
     <header>
       <div id="header-wrapper">
         <div id="header">
@@ -70,11 +59,65 @@
                 <!-- <li><a href="http://certificaciones.uprb.edu/?p=galeria">Galería</a></li> -->
             </ul>
           </nav>
-        </div> <!-- id="header" -->
+        </div> 
+        <!-- id="header" -->
       </div>
     </header>
+    <!-- Header -->
 
-include_once("header.php");
+    <!-- Banner -->
+    <section id="banner">
+      <header>
+        <h2>Las certificaciones de tecnología reconocidas por la industria que necesitas para tener éxito.</h2>
+        <p>¡Obtenlas con nosotros, te esperamos!</p>
+      </header>
+    </section>
+    <!-- Banner -->
+
+    <!-- Main -->
+    <div id="main-wrapper">
+      <!-- Intro -->
+      <section id="intro" class="container">
+        <div class="row">
+          <div class="4u 12u(mobile)">
+            <section class="first">
+              <img src="/images/logo_uprb_catc.jpg" width="100%" alt="Certiport Authorized Testing Center" />
+              <header>
+                <h2>Centro de Exámenes Autorizado</h2>
+              </header>
+              <a href="/documentos/Cert17610271216.pdf" target="_blank" class="button">Ver documento <i class="icon fa-angle-right"></i></a>
+            </section>
+          </div>
+          <div class="4u 12u(mobile)">
+            <section class="first">
+              <img src="/images/logo_youtube.png" width="100%" alt="Youtube Channel" />
+              <header>
+                <h2>Subscríbete a nuestro canal!</h2>
+              </header>
+              <a href="https://www.youtube.com/channel/UCC23CL7m77F3KnlJxmGAbNA?view_as=subscriber" target="_blank" class="button">Ver el canal <i class="icon fa-angle-right"></i></a>
+            </section>
+          </div>
+          <div class="4u 12u(mobile)">
+            <section class="first">
+              <img src="/images/departamentos.png" width="100%" alt="Departamentos" />
+              <header>
+                <h2>¿Podrían beneficiarte?</h2>
+              </header>
+              <p>Las certificaciones reflejan y validan las habilidades y la experiencia profesional, ayudando en la solución de problemas tecnológicos y mejora de la actuación profesional. Los programas de certificación, están en constante actualización para cumplir con el mercado laboral y, por lo tanto, convertirse en herramientas eficaces para el logro profesional y el crecimiento de su carrera.</p>
+            </section>
+          </div>
+        </div>
+        <footer>
+            <ul class="actions">
+                <li><a href="http://certificaciones.uprb.edu/?p=certificaciones" class="button big">Conoce más sobre las certificaciones disponibles!</a></li>
+            </ul>
+        </footer>
+      </section>
+      <!-- Intro End -->
+    </div>
+    <!-- Main End -->
+
+<!-- include_once("header.php");
 
 if (isset($_GET['p']) && !empty($_GET['p'])) {
     switch ($_GET['p']) {
@@ -104,28 +147,124 @@ if (isset($_GET['p']) && !empty($_GET['p'])) {
         default:
             include_once("inicio.php");
             break;
-    }
-} else {
-    include_once("inicio.php");
-}
+    } -->
 
+    <!-- Footer -->
     <footer>
       <div id="footer-wrapper">
         <section id="footer" class="container">
           <div class="row">
             <div class="8u 12u(mobile)">
+              <section>
+                <header>
+                    <h2>Fechas importantes</h2>
+                </header>
+                <ul class="dates" id="fechas-importantes">
+                  <script>
+                    fetch("fechas-importantes.json")
+                      .then(function (response) {
+                        return response.json();
+                      })
+                      .then(function (data) {
+                        // console.log(data);
+                        var fechas = "";
+                        for (i=0; i < data.length; i++) {
+                          var fecha = `
+                          <li>
+                            <span class="date">${data[i].mes}<strong>${data[i].dia}</strong></span>
+                            <h3>${data[i].titulo}</h3>
+                            <p>${data[i].detalles}</p>
+                          </li>
+                          `;
+                          fechas += fecha;
+                        }
+                        document.getElementById("fechas-importantes").innerHTML = fechas;
+                      })
+                  </script>
+                </ul>
+              </section>
+            </div>
+            <div class="4u 12u(mobile)">
+              <section>
+                <header>
+                    <h2>¿De qué trata todo esto?</h2>
+                </header>
+                <a href="#" class="image featured"><img src="/images/logo_decep.png" alt="Logo DECEP" /></a>
+                <p>
+                    La <strong>División de Educación Contínua y Estudios Profesionales (DECEP)</strong> ofrece servicios educativos utilizando estrategias y enfoques innovadores, dirigidos y adaptados a una sociedad cambiante de frente al nuevo milenio.
+                </p>
+                <footer>
+                    <a href="http://www.uprb.edu/sample-page/decanato-de-asuntos-academicos/division-de-educacion-continua-decep/" class="button" target="_blank" style="background: #fff;">Conoce más sobre la DECEP <i class="icon fa-angle-right"></i></a>
+                </footer>
+              </section>
+            </div>
+          </div>
+          <br>
+          <h2>Contáctanos</h2>
+          <hr>
+          <div class="row">
+            <div class="3u 12u(mobile)">
+              <ul class="social">
+                <li><a class="icon fa-facebook" target="_blank" href="https://www.facebook.com/UPRBayamonOFICIAL/"><span class="label">Facebook</span></a></li>
+                <!-- <li><a class="icon fa-twitter" target="_blank" href="#"><span class="label">Twitter</span></a></li> -->
+                <li><a class="icon fa-linkedin" target="_blank" href="https://www.linkedin.com/school/uprb/"><span class="label">LinkedIn</span></a></li>
+              </ul>
+            </div>
+            <div class="3u 12u(mobile)">
+              <ul>
+                <li>
+                  <h3>Dirección</h3>
+                  <p>UPR en Bayamón<br /> Industrial Minillas 170, Carr. 174<br /> Bayamón, PR 00959-1919</p>
+                </li>
+              </ul>
+            </div>
+            <div class="3u 12u(mobile)">
+              <ul>
+                <li>
+                  <h3>Email</h3>
+                  <p>decep.bayamon@upr.edu<br/>
+                  <!-- certificaciones.uprb@upr.edu --></p>
+                </li>
+              </ul>
+            </div>
+            <div class="3u 12u(mobile)">
+              <ul>
+                <li>
+                  <h3>Teléfono</h3>
+                  <p>(787) 993-0000
+                  </br>Ext: 3459, 3461, 3462, 3464, 3465</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="12u">
+              <!-- Copyright -->
+              <div id="copyright">
+                <ul class="links">
+                  <li>&copy; Certificaciones UPR en Bayamón. All rights reserved.</li>
+                  <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+              </div>
+              <!-- Copyright -->
+            </div>
+          </div>
+        </section>
+      </div>
     </footer>
-
-  </div> <!-- id="page-wrapper" -->
+    <!-- Footer End -->
+  </div> 
+  <!-- id="page-wrapper" -->
 
   <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.dropotron.min.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/skel-viewport.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/jquery.dropotron.min.js"></script>
+  <script src="/assets/js/skel.min.js"></script>
+  <script src="/assets/js/skel-viewport.min.js"></script>
+  <script src="/assets/js/util.js"></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="/assets/js/main.js"></script>
 
 </body>
 </html>

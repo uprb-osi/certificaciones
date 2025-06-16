@@ -1068,7 +1068,7 @@ body {
 
 body {
     background: #99CAFF;
-    background-image: url("images/bg02.png");
+    background-image: url("/assets/css/images/bg.png");
     font-family: 'Source Sans Pro';
     font-weight: 300;
     color: #000;
@@ -1719,7 +1719,7 @@ ol.default li {
 
 #main-wrapper {
     position: relative;
-    background: #f7f7f7 url("images/bg02.png");
+    background: #f7f7f7 url("/assets/css/images/bg.png");
 }
 
 #main-wrapper:before {
@@ -1728,14 +1728,14 @@ ol.default li {
     top: 0;
     left: 0;
     width: 100%;
-    background: url("images/bg01.png");
+    background: url("/assets/css/images/bg.png");
     background-size: 100% 100%;
     z-index: 0;
     opacity: 0.1;
 }
 
 #main-wrapper .major h2 {
-    background: #f7f7f7 url("images/bg02.png");
+    background: #f7f7f7 url("/assets/css/images/bg.png");
 }
 
 #footer-wrapper {
@@ -1749,7 +1749,7 @@ ol.default li {
     top: 0;
     left: 0;
     width: 100%;
-    background: url("images/bg01.png");
+    background: url("/assets/css/images/bg.png");
     background-size: 100% 100%;
     z-index: 0;
     opacity: 0.5;
@@ -2330,7 +2330,7 @@ ol.default li {
         width: 275px;
         z-index: 10002;
         color: #000;
-        background-image: url("images/bg02.png");
+        background-image: url("/assets/css/images/bg.png");
         box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.35);
     }
     #navPanel .link {
